@@ -2,24 +2,24 @@ package com.geoffreybrunet.gostyleandroid
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.zxing.integration.android.IntentIntegrator
-import kotlinx.android.synthetic.main.activity_main.*
 
-//const val TAG: String = "TAG"
+const val TAG: String = "TAG"
 
 class ScanActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        button.setOnClickListener {
-            scanQRCode()
-        }
     }
 
-    private fun scanQRCode(){
+    fun onClickListener(view: View) {
+        scanQRCode()
+    }
+
+    private fun scanQRCode() {
         val integrator = IntentIntegrator(this).apply {
             captureActivity = CaptureActivity::class.java
             setOrientationLocked(false)
@@ -39,4 +39,5 @@ class ScanActivity : AppCompatActivity() {
             super.onActivityResult(requestCode, resultCode, data)
         }
     }
+
 }
