@@ -14,5 +14,6 @@
     <string name="item_default_price">0.00€</string>
     <string name="send_email">Send email</string>
     <string name="go_to_camera">Go to camera</string>
+    <string name="products_list">Product list</string>
 
 </resources>
